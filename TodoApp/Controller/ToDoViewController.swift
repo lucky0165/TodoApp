@@ -66,8 +66,19 @@ class ToDoViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            
+            let itemToRemove = self.items[indexPath.row]
+            self.context.delete(itemToRemove)
+            self.save()
+            self.load()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
