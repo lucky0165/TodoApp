@@ -12,6 +12,8 @@ class ToDoViewController: UITableViewController {
     
     var items = [Item]()
     
+    var selectedCategory: Category?
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -31,9 +33,9 @@ class ToDoViewController: UITableViewController {
     }
     
     // Retrieve data from CoreData
-    func load() {
+    func load(_ request: NSFetchRequest<Item> = Item.fetchRequest()) {
         do {
-            items = try context.fetch(Item.fetchRequest())
+            items = try context.fetch(request)
         } catch {
             print("Error retrieving data: \(error)")
         }
@@ -78,7 +80,6 @@ class ToDoViewController: UITableViewController {
         
         return UISwipeActionsConfiguration(actions: [action])
     }
-
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -112,4 +113,32 @@ class ToDoViewController: UITableViewController {
     }
     
 }
+
+// MARK: - UISearchBar Delegate
+extension ToDoViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        
+        let sort = NSSortDescriptor(key: "title", ascending: true)
+        
+        request.sortDescriptors = [sort]
+        
+        load(request)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            load()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+     
+        }
+    }
+    
+    
+}
+
 
