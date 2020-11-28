@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7AAC1730257259F200A756AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC172F257259F200A756AE /* AppDelegate.swift */; };
 		7AAC1732257259F200A756AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC1731257259F200A756AE /* SceneDelegate.swift */; };
-		7AAC1734257259F200A756AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC1733257259F200A756AE /* ViewController.swift */; };
+		7AAC1734257259F200A756AE /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC1733257259F200A756AE /* ToDoViewController.swift */; };
 		7AAC1737257259F200A756AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC1735257259F200A756AE /* Main.storyboard */; };
 		7AAC173A257259F200A756AE /* TodoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC1738257259F200A756AE /* TodoApp.xcdatamodeld */; };
 		7AAC173C257259F400A756AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC173B257259F400A756AE /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		7AAC172C257259F200A756AE /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAC172F257259F200A756AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AAC1731257259F200A756AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7AAC1733257259F200A756AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AAC1733257259F200A756AE /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		7AAC1736257259F200A756AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AAC1739257259F200A756AE /* TodoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoApp.xcdatamodel; sourceTree = "<group>"; };
 		7AAC173B257259F400A756AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,14 +60,38 @@
 			children = (
 				7AAC172F257259F200A756AE /* AppDelegate.swift */,
 				7AAC1731257259F200A756AE /* SceneDelegate.swift */,
-				7AAC1733257259F200A756AE /* ViewController.swift */,
-				7AAC1735257259F200A756AE /* Main.storyboard */,
+				7AAC174A25725A0B00A756AE /* Model */,
+				7AAC174925725A0500A756AE /* View */,
+				7AAC1747257259FD00A756AE /* Controller */,
 				7AAC173B257259F400A756AE /* Assets.xcassets */,
 				7AAC173D257259F400A756AE /* LaunchScreen.storyboard */,
 				7AAC1740257259F400A756AE /* Info.plist */,
 				7AAC1738257259F200A756AE /* TodoApp.xcdatamodeld */,
 			);
 			path = TodoApp;
+			sourceTree = "<group>";
+		};
+		7AAC1747257259FD00A756AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AAC1733257259F200A756AE /* ToDoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AAC174925725A0500A756AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AAC1735257259F200A756AE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AAC174A25725A0B00A756AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AAC1734257259F200A756AE /* ViewController.swift in Sources */,
+				7AAC1734257259F200A756AE /* ToDoViewController.swift in Sources */,
 				7AAC1730257259F200A756AE /* AppDelegate.swift in Sources */,
 				7AAC1732257259F200A756AE /* SceneDelegate.swift in Sources */,
 				7AAC173A257259F200A756AE /* TodoApp.xcdatamodeld in Sources */,
